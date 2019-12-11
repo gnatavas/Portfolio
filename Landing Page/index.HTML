@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
+    <title>landing Page</title>
+    <style>
+      header {
+        position: relative;
+        margin-top: 10px;
+      }
+      .nav-link {
+        text-decoration: none; /*убирает подчеркивания с навигационного меню*/
+      }
+      body {
+        border-style: ridge;
+        font-size: 20px;
+        text-align: justify;
+        padding-left: 10vw;
+        padding-right: 10vw;
+      }
+      h2 {
+        text-align: center;
+        background-color: #808080;
+        border-radius: 5px;
+        color: white;
+        padding: 2px;
+      }
+      div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* text-align: justify; */
+        padding-bottom: 20px;
+        padding-top: 20px;
+      }
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin-left: 20px;
+        border-radius: 5px;
+      }
+      p {
+        text-indent: 40px;
+      }
+      #nav-bar {
+        background-color: rgba(255, 255, 255, 0);
+        border-radius: 5px;
+        position: fixed;
+        top: 0px;
+        right: 5px;
+        padding-right: 10vw;
+        font-size: 40px;
+        margin-right: 5px;
+      }
+      #video {
+        width: 700px;
+        height: 400px;
+        margin-left: 30px;
+      }
+      #sub-legend { text-align: center; font-size: 30px; border-radius: 5px;}
+      #form { margin-bottom: 10px; }
+      @media (max-width: 1366px) {
+        body {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        #about, #products, #news {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: justify;
+        }
+        #video {
+          max-width: 100%;
+          height: auto;
+          display: block;
+          margin-left: 10px;
+          margin-right: 10px;
+          border: solid;
+          border-radius: 5px;
+        }
+
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <header id="header">
+      <nav id="nav-bar">
+        <a href="#about" class="nav-link">company</a>
+        <a href="#products" class="nav-link">products</a>
+        <a href="#news" class="nav-link">news</a>
+      </nav>
+      <img src="https://rosagroup.com.ua/img/multilogo/logo_en.png" alt="Rosa logo" id="header-img">
+    </header>
+    <main>
+      <h2>About company</h2>
+      <div id="about">
+        <article>
+          <p>Our intention is to make art the part of modern people’s life.
+          We help people of all ages and artistic levels open and realize their creative potential by carefully selecting and producing high-quality art materials as well as giving the chance to our customers to buy ROSA products either in retail stores all over Ukraine or in online stores.</p>
+
+          <p>ROSA is a leading Ukrainian manufacturer of professional art products, hobby, decorating and other creativity materials. We also design art kits for beginners, willing to join the world of creativity.</p>
+
+          <p>We have 20 year of experience in art production. Not only Ukrainian but also world artists work with ROSA brand products. We have been exporting our art materials for over 15 years to such countries as the USA, Russia, the Netherlands, Romania, Moldova, Germany, France, Estonia, Greece and Slovenia.</p>
+
+          <p>To create and refine our products, we carefully study the customers’ demands, our partners’ feedback and market trends. We also actively participate in national and international exhibitions. Our highly-qualified specialists on staff, own state-of-the-art laboratory, up-to-date techniques, specialized equipment and the use of high-quality natural materials give us the opportunity to meet the customers’ demands and even go beyond their expectations. We combine time-honored traditions with modern techniques, deep attention to every detail with challenging ideas to make products that will satisfy the highest requirements.</p>
+          </article>
+        <iframe id="video" src="https://www.youtube.com/embed/4uli-8OARyo"></iframe>
+      </div>
+      <h2>Our Pruducts</h2>
+      <div id="products">
+        <article>
+          <p>ROSA is a leading Ukrainian manufacturer of professional art products, hobby, decorating and other creativity materials. We also design art kits for beginners, willing to join the world of creativity.</p>
+
+          <p>We have 20 year of experience in art production. Not only Ukrainian but also world artists work with ROSA brand products. We have been exporting our art materials for over 15 years to such countries as the USA, Russia, the Netherlands, Romania, Moldova, Germany, France, Estonia, Greece and Slovenia. To create and refine our products, we carefully study the customers’ demands, our partners’ feedback and market trends. We also actively participate in national and international exhibitions. Our highly-qualified specialists on staff, own state-of-the-art laboratory, up-to-date techniques, specialized equipment and the use of high-quality natural materials give us the opportunity to meet the customers’ demands and even go beyond their expectations. We combine time-honored traditions with modern techniques, deep attention to every detail with challenging ideas to make products that will satisfy the highest requirements.</p>
+        </article>
+        <img id="manuf-img" src="https://rosagroup.com.ua/modules//smartblog/images/10-single-default.jpg" alt="production">
+      </div>
+      <h2>What's up</h2>
+      <div id="news">
+        <article>
+          <p>We present to you a set of professional ROSA Gallery watercolours with favorite palette by famous Ukrainian-Czech artist Alexandra Bryksa, leader of IWS Czech Republic.</p>
+
+          <p>Each artist's work is full of refined taste, special style, deep philosophy.
+          Luxury paintings from the latest collections have become the basis for the design of packaging sets of watercolors Alexandra Bryksa ART & ROSA. Gentle and romantic portrait of her daughter - "Spring Poem" and deeply symbolic work "Infinity" create a special atmosphere and transform sets into works of art.</p>
+
+          <p>Sets of professional watercolour paints Alexandra Bryksa ART & ROSA can be purchased exclusively from the artist, using the site www.alexandrabryksa.com
+          *14 Colors set in Tubes 10ml in wooden case
+          * 24 Colors set in Tubes 10ml in wooden case</p>
+
+          <p>The favourite of Alexandra Bryksa palette is Indigo. " This paint is very rich of excellent pigment which reflexes any expected achievements."
+          Carefully selected watercolour palette from Alexandra Bryksa is a perfect solution for artists who want to achieve high colouring, noble mixtures and convey the color depth, to create accents in their works.</p>
+
+          <p>Thanks to Alexandra Bryksa for collaboration, support and trust! We do appreciate it and with delight and inspiration build art history of Ukraine together!
+          For all who travel Czech Republic as well as for residents we recommend to visit the extraordinary personal exhibition of Alexandra in Strakonnicza, which will last up to 25.11.19.</p>
+
+          <p>We are delighted with the fantastic works, the stylish exposition of each collection and exclusive support of the event with unique brand things from the Alexandra Bryksa ART. Style and quality in everything, an example for all and enjoyment for the sensitive eye of artistic souls.</p>
+
+          <p>Dear Alexandra, congratulations on the opening of incredible exhibition and extraordinary projects, we wish you successful initiatives and achievements in all cases!</p>
+        </article>
+          <img id="news-img" src="https://rosagroup.com.ua/modules//smartblog/images/76-single-default.jpg" alt="oil paints">
+
+      </div>
+    </main>
+  </body>
+  <footer>
+    <form id="form" action="https://www.freecodecamp.com/email-submit"
+      method="post">
+      <fieldset>
+        <legend id="sub-legend">Subscribe to our news</legend>
+        <input id="email" type="email" name="email" placeholder="enter your valid e-mail here">
+        <label for="email">Your email</label>
+        <input id="submit" type="submit" name="submit">
+        <label for="submit">Submit</label>
+      </fieldset>
+  </form>
+  </footer>
+</html>

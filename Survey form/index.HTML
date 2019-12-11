@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>survey form Rosa</title
+    <meta name="description" content="survey form">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+      body {
+        font-size: 20px;
+      }
+      fieldset, textarea {
+        border-style: outset;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+    <h1 id="title">Rosa Gallery survey form</h1>
+    <p id="description">Please take time to answer a couple of questions. Thanks in advance</p>
+    <form id="survey-form">
+      <label for="name" id="name-label">Name</label><br>
+      <input type="text" name="name" id="name" placeholder="Name, Surname" required></input> <br>
+      <label for="email" id="email-label">E-mail</label><br>
+      <input type="email" name="e-mail" id="email" placeholder="enter your valid e-mail here" required></input> <br>
+      <label for="number" id="number-label">Your age</label><br>
+      <input type="number" name="age" id="number" min="5" max="110" placeholder="5 - 110"></input><br>
+      <label for="dropdown">Yor gender</label><br>
+      <select name="gender" id="dropdown">
+        <option value="male">male</option>
+        <option value="female">female</option>
+      </select>
+      <hr>
+      <fieldset>
+        <legend>where do you prefer to work?</legend>
+          <input type="radio" name="location" value="outdoor">Outdoor</input>
+          <br>
+          <input type="radio" name="location" value="in my studio">in my studio</input><br>
+          <input type="radio" name="location" value="at home">at home</input><br>
+      </fieldset>
+      <fieldset>
+        <legend>At what season of year do you feel like painting most?</legend>
+          <input type="radio" name="season" value="spring">spring</input><br>
+          <input type="radio" name="season" value="summer">summer</input><br>
+          <input type="radio" name="season" value="fall">fall</input><br>
+          <input type="radio" name="season" value="winter">winter</input><br>
+      </fieldset>
+      <fieldset>
+        <legend>I prefer paints of these manufacturers:</legend>
+          <input type="checkbox" name="ROSA Gallery" value="ROSA Gallery">Rosa Gallery</input><br>
+          <input type="checkbox" name="Sony" value="Sony">Sony</input><br>
+          <input type="checkbox" name="Samsung" value="Samsung">Samsung</input>
+      </fieldset>
+      <hr>
+      <textarea name="additional comments" rows="10" cols="100">Aditional information you may want to submit</textarea><br>
+      <input type="submit" id="submit"></input>
+    </form>
+  </body>
+  <footer>
+  </footer>
+</html>
