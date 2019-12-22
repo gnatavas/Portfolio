@@ -2,86 +2,1592 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" name="description" content="technical documentation page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tasker userguide</title>
+    <link href="https://fonts.googleapis.com/css?family=Bentham|Ultra&display=swap" rel="stylesheet">
+    <style media="screen">
+      * { box-sizing: border-box; }
+      body { margin: 0;}
+      main {
+        display: flex;
+        justify-content: flex-start;
+        height: 100vh;
+      }
+      /* .background {
+        background-image: url("images/homeland.jpg");
+        position: fixed;
+        background-repeat: no-repeat;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      } */
+      .content {
+        flex-grow: 1;
+        overflow-y: scroll;
+        padding: 1rem 10rem;
+        background-color: #e6e6e6;
+        font-size: 1.2rem;
+        /* background-image: radial-gradient(#997366, #b9ccb3); */
+      }
+      .content p {
+      }
+      h2 {
+        text-align: center;
+        font-family: 'Bentham', serif;
+      }
+      #navbar {
+        display: flex;
+        flex-direction: column;
+        width: 20%;
+        min-width: 300px;
+        background-color: grey;
+        color: white;
+        border-radius: 0.2rem;
+      }
+      .navbar-header{
+        display: flex;
+        align-items: center;
+        /* padding: 0.5rem; */
+        margin: 0.5rem;
+      }
+      .navbar-header h1 {
+        text-align: center;
+        color: orange;
+        padding: 0rem 0.2rem 0rem 0.3rem;
+        margin: 0;
+      }
+      .logo-container {
+
+      }
+      .logo {
+        width: 3rem;
+        height: auto;
+        border-radius: 0.7rem;
+      }
+      .nav-link {
+        text-decoration: none;
+        font-size: 1.3rem;
+        color: inherit;
+        border: 2px solid white;
+        border-radius: 5px;
+        padding: 0.5rem;
+        margin: 0.5rem;
+        text-align: center;
+        box-shadow: #404040 2px 2px 2px;
+      }
+      .nav-link:hover {
+        color: black;
+        background-color: orange;
+        box-shadow: black 3px 3px 3px;
+      }
+      @media (max-width: 380px) {
+        main {
+          flex-direction: column;
+        }
+        .content {
+          margin: 0px;
+          font-size: 0.8rem;
+        }
+        #navbar {
+          display: none;
+          flex-flow: row;
+          position: fixed;
+          align-items: center;
+          justify-content:space-around;
+          width: 100vw;
+          height: 5vh;
+          background-color: grey;
+          color: white;
+          border-radius: 2px;
+          margin: 0.2rem 0rem;
+        }
+        .navbar-header h1 {
+          display: flex;
+          justify-content: space-around;
+          font-size: 0.8rem;
+          border-radius: 2px;
+        }
+        .logo {
+          height: auto;
+        }
+        .nav-link {
+          text-decoration: none;
+          font-size: 0.6rem;
+          color: inherit;
+          /* padding: 5px; */
+          /* margin: 5px; */
+          box-shadow: none;
+          border: 1px solid white;
+          border-radius: 2px;
+          margin: 0.2rem 0rem;
+        }
+      }
+      @media (max-width: 1024px) {
+        main {
+          flex-direction: column;
+        }
+        .content {
+          margin: 0px;
+          padding: 1rem;
+          font-size: 1.1rem;
+        }
+        #navbar {
+          flex-flow: row;
+          position: fixed;
+          align-items: center;
+          justify-content:space-around;
+          width: 100%;
+          height: 5vh;
+          background-color: grey;
+          color: white;
+          border-radius: 2px;
+          margin: 0 1rem 0 0;
+        }
+        .navbar-header {
+          display: flex;
+          justify-content: space-between;
+        }
+        .navbar-header h1 {
+          font-size: 0.8rem;
+          border-radius: 2px;
+        }
+        .nav-link {
+          text-decoration: none;
+          font-size: 0.6rem;
+          color: inherit;
+          /* padding: 5px; */
+          /* margin: 5px; */
+          box-shadow: none;
+          border: 1px solid white;
+          border-radius: 2px;
+          margin: 0.2rem 0rem;
+        }
+      }
+    </style>
   </head>
   <body>
+    <div class="background"></div>
     <main id="main-doc">
       <nav id="navbar">
-        <header>
-          <p>The navbar element should contain one header element which contains text that describes the topic of the technical documentation.</p>
+        <header class="navbar-header">
+          <!-- <div class="logo-container"> -->
+            <img class="logo"src="images/tasker-logo.jpg" alt="Tasker logo">
+          <!-- </div> -->
+          <h1>Tasker technical documentation</h1>
         </header>
-          <a href="#Tasker_Profiles" class="nav-link">Tasker Profiles</a>
-          <a href="#Tasker_Tasks" class="nav-link">Tasker Tasks</a>
-          <a href="#Tasker_Screens" class="nav-link">Tasker Screens</a>
-          <a href="#Tasker_Variables" class="nav-link">Tasker Variables</a>
-          <a href="#Tasker_Miscellaneous" class="nav-link">Tasker Miscellaneous</a>
+        <a href="#Tasker_Profiles" class="nav-link">Tasker Profiles</a>
+        <a href="#Tasker_Tasks" class="nav-link">Tasker Tasks</a>
+        <a href="#Tasker_Screens" class="nav-link">Tasker Screens</a>
+        <a href="#Tasker_Variables" class="nav-link">Tasker Variables</a>
+        <a href="#Tasker_Power_Usage" class="nav-link">Tasker Power Usage</a>
       </nav>
-      <section class="main-section" id="Tasker_Profiles">
-        <header>
-          <h2>Tasker Profiles</h2>
-        </header>
-          <p>paragraph</p>
-          <p>paragraph</p>
-          <code>some computer code</code>
+      <div class="content">
+        <section class="main-section" id="Tasker_Profiles">
+          <header>
+            <h2>Tasker Profiles</h2>
+          </header>
+          <p>
+          Each item in the list represents a profile. The profile links contexts (conditions) on
+          the left to tasks which should be run on the right. The profile name is green if
+          the profile is active. There are three main parts to each profile.
+          </p>
+
+          <h5><i>1. Title Bar</i></h5>
+
+          <p>
+          This shows the profile name (or description if it has no name) and a
+          switch on the right shows whether the profile is enabled or not.
+          </p>
+          <p>
+          </p><ul>
+          	<li><b>Click</b> on the name to expand / collapse the profile. When expanded, the contexts and tasks (described below), are visible.
+          	</li><li><b>Long-click</b> on the profile name to get profile options or to drag  profile(s) around
+          	</li><li><b>Click</b> on the switch to control whether the profile is enabled or not.
+          </li></ul>
+
+          <p>Important: the switch being set to <b>on</b> does <b>not</b> mean the profile is <b>active</b>
+          (will run its tasks), it means that the profile <b>can</b> become active
+          <b>if</b> its conditions are met.
+          </p>
+
+          <h5><i>2. Contexts</i></h5>
+
+          <p>
+          On the left hand side of the profile are an icon and text for each context in the
+          profile. The contexts dictate when the profile should become active. When <b>all</b> contexts
+          are active then the profile will be active.
+          </p>
+
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-      </section>
-      <section class="main-section" id="Tasker_Tasks">
-        <header>
-          <h2>Tasker Tasks</h2>
-        </header>
-          <p>paragraph</p>
-          <p>paragraph</p>
-          <code>some computer code</code>
+          	<li><b>Click</b> on the context to edit it
+          	</li><li><b>Long-click</b> to show management options, such as editing or adding a new context
+          </li></ul>
+
+          <p>
+          You can configure what clicks and long-clicks on contexts do in <code>Menu / Prefs / UI</code>.
+          </p>
+
+          <h5><i>3. Tasks</i></h5>
+          <p>
+          On the right hand side of the profile are one or two tasks to
+          carry out based on its activation status.
+          </p>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-      <section class="main-section" id="Tasker_Screens">
-        <header>
-          <h2>Tasker Screens</h2>
-        </header>
-          <p>paragraph</p>
-          <p>paragraph</p>
-          <code>some computer code</code>
+          	<li><b>Click</b> on the task to edit it
+          	</li><li><b>Long-click</b> to show management options.
+          </li></ul>
+          <p>
+          A task indicated with a <b>green, right-pointing</b> arrow is an
+          <i>entry</i> task, executed when the profile first becomes active.
+          </p>
+          <p>
+          A task indicated with a <b>red, left-pointing</b> arrow is an
+          <i>exit</i> task, executed when the profile becomes inactive again.
+          </p>
+          <p>Exception: a profile containing an event context or a repeating
+          or non-ranged time context has two green
+          arrows, to denote that both tasks are executed immediately because
+          the profile activation and deactivation is instantaneous.
+          </p>
+
+          <p>Click on the <b>Profiles</b> tab when it is already selected for
+          general profile-related options such as sorting.
+          </p>
+          <h4>Tasks</h4>
+
+          The task list shows the named tasks which have been created.
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-      </section>
-      <section class="main-section" id="Tasker_Variables">
-        <header>
-          <h2>Tasker Variables</h2>
-        </header>
-          <p>paragraph</p>
-          <p>paragraph</p>
-          <code>some computer code</code>
+          	<li><b>Click</b> on a task to edit it
+          	</li><li><b>Long-click</b> for options or to drag task(s) around
+          </li></ul>
+          <p>
+          Note that a profile can be assigned an <i>anonymous</i> task (one without
+          a name) which is not accessible in the task list, only via the
+          relevent profile in the profile list.
+          </p>
+
+          <p>Click on the <b>Tasks</b> tab when it is already selected for
+          general task-related options such as sorting.
+          </p>
+
+          <h4>Scenes</h4>
+
+          The scene list shows the scenes which have been created.
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-      </section>
-      <section class="main-section" id="Tasker_Miscellaneous">
-        <header>
-          <h2>Tasker Miscellaneous</h2>
-        </header>
-          <p>paragraph</p>
-          <p>paragraph</p>
-          <code>some computer code</code>
+          	<li><b>Click</b> on a scene to edit it
+          	</li><li><b>Long-click</b> for options or to drag scene(s) around
+          </li></ul>
+
+          <p>Scenes with a green name have been created but may be invisible (hidden).</p>
+
+          <p>Click on the <b>Scenes</b> tab when it is already selected for
+          general scene-related options such as sorting.
+          </p>
+          <h4>Variables</h4>
+
+          <p>The Variables tab is not shown if Beginner Mode is enabled.</p>
+
+          <p>By default, all global user-variables that Tasker knows about are listed, which includes any that have a value set or are mentioned somewhere in a profile, task or scene.
+          </p>
           <ul>
-            <li></li>
-            <li></li>
-            <li></li>
+          	<li><b>Click</b> on a variable to edit it
+          	</li><li><b>Long-click</b> for options
+          </li></ul>
+          <p>
+          Note that variables whose names are all lower-case are <i>local</i> variables and not shown because they are only valid within the task that refers to them.
+          </p>
+
+          <p>Click on the <b>Vars</b> tab when it is already selected for
+          general variable-related options such as sorting and filtering.
+          </p>
+
+          <p>
+          The filter controls function as follows:
+          </p>
+
+          <ul>
+                  <li><b>Indexed</b> (button)<br>includes variables whose names end in a number e.g. <code>%LOC3</code>, otherwise they are excluded.
+                  </li><li><b>Empty</b> (button)<br>includes variables which have currently have no value assigned, deselect to show only variables that have a value.
+                  </li><li><b>Referenced</b> (button,home project only)<br>includes variables which are referenced in profiles, tasks or scenes.<br>Deselect to show only 'orphan' variables.
+                  </li><li><b>Filter</b> (textbox)<br>excludes variables which don't contain the specified text somewhere in their name (case-sensitive)
+          </li></ul>
+
+          <p>In a user-created project, only variables referenced by that project are shown.</p>
+
+          <p>
+          Unlike most screens in Tasker, changes made in the variable list cannot be cancelled.
+          </p>
+
+          <h4>Action Bar</h4>
+
+          <h5><i>Apply</i> Button</h5>
+
+          <p>
+          Save and apply any changes which have been made <b>without</b>
+          exiting the UI.
+          </p>
+          <p>
+          This is unnecessary prior to leaving the UI via
+          the back button or home key, it's just for convenience
+          when testing changes.
+          </p>
+
+          <p>
+          Not visible in Beginner Mode.
+          </p>
+
+          <h5><i>Overflow</i> Button</h5>
+
+          Click to access menu options if no menu hard-key is available on the device.
+
+          <h3>Menus</h3>
+
+          <h4>Menu Item: Browse Examples</h4>
+
+          Links to websites with projects, profiles etc offering solutions for common
+          problems.  Important: once downloaded you need to import the file into
+          your active user data. For example, profiles are imported by long-clicking
+          the profile tab and selecting Import.
+
+          <h4>Menu Items: Data</h4>
+
+          <h5>Clear</h5>
+
+          Removes all data that has been created to that point. Does
+          not remove preferences (use <code>Menu / Preferences</code> and click <b>Defaults</b> for
+          that) or variables (long-click on the Variables tab for that).
+
+          <h5>Backup</h5>
+
+          Saves the existing user data to a backup file on external storage.
+
+          <h5>Restore</h5>
+
+          Options for restoring backups of various types.
+
+          <h3>Projects</h3>
+
+          <p>
+          Tasker allows organisation of profiles, tasks, scenes and variables
+          into groups called <i>Projects</i>, each with a separate <i>Project Tab</i>.
+          </p>
+          <p>The projects tabs are hidden in Beginner Mode
+          </p>
+
+          <ul>
+          	<li><b>Click</b> on a project tab to switch to viewing only
+          things in that project
+          	</li><li><b>Long-click</b>  on a project tab for options, including
+          adding a new tab. Options can also be accessed by a single click on the
+          selected project tab.
+          	</li><li><b>Long-click and Select</b>, then drag to a project tab, any items you
+          want to move to that project
+          </li></ul>
+
+          <p>The first tab has a slightly special status, it cannot be removed
+          and anything which is not a member of another project is placed there.
+          </p>
+          <code>some computer code</code>
+        </section>
+        <section class="main-section" id="Tasker_Tasks">
+          <header>
+            <h2>Tasker Tasks</h2>
+          </header>
+          A task is simply a set of actions which are performed one after the other.
+
+          <h4>Named / Anonymous Tasks</h4>
+
+          A task can be given a name. This allows:
+          <ul>
+          <li>the same task to be used in more than one profile</li>
+          <li>easier identification of what the task does</li>
+          <li>in the case of a task widget/shortcut,
+          it provides a label	for the icon on the home screen.</li>
           </ul>
-      </section>
+
+          <p>
+          When creating a profile, widget or shortcut,
+          often the associated task will consist only of one or two actions which will not
+          be reused. For this case, Tasker allows you to create a task without a name
+          (an <i>Anonymous</i> task).
+          </p>
+
+          <h4>Task Visibility</h4>
+
+          Anonymous tasks are only visible when editing the profile that they are associated
+          with.
+          <p>
+          Named tasks are visible on any screen that allows task editing.
+          Any changes made to the set of tasks in any screen is reflected in all the other
+          screens.
+
+          </p><h4>Task Icon</h4>
+
+          Each task has an associated icon, by default a question mark. The icon is used
+
+          <ul>
+          <li>to represent the task on the home screen when it is used as a
+          widget or shortcut
+          </li><li>when the task is turned into and app
+          </li><li>for easier identification of the task within the Tasker UI
+          </li></ul>
+
+          <h4>Deleting Tasks</h4>
+
+          Named tasks can only be deleted via the <i>Delete</i> button on the
+          Task Edit screen. Unnamed tasks
+          are deleted automatically when the profile they are part of is deleted,
+          or a named task is selected for that profile.
+
+          <p>
+          Named tasks cannot be deleted while a profile still refers to them.
+          </p>
+          <p>
+          When a task is deleted that is referred to by a previously created named
+          widget or task, the widget will stop working.
+          </p>
+          <p>
+          Android does not allow Tasker to automatically remove the widget from the
+          Home Screen.
+          </p>
+
+          <h4>Task Scheduling</h4>
+
+          When there is a single task waiting to be executed, it's actions are executed one-by-one
+          until finished.
+
+          <p>
+          When there are several tasks in the queue at once, it's important to understand
+          how they are handled:
+          </p>
+          <ul>
+          <li>only <b>one action</b> from the same action group can be executed at once to
+          prevent interference
+          </li><li>the task in the queue with the <b>highest priority</b> goes first and blocks lower priority tasks
+          </li><li>tasks with the <b>same priority</b> take turns executing an action
+          each, starting with the most recent addition to the queue <b>unless</b> one task is a child of the
+          other (started via Perform Task), in which case the child executes first.
+          </li></ul>
+
+          <p>
+          Task priority, 0 to 50 inclusive with 0 being lowest, is determined according to whatever causes the task to run.
+
+          </p><ul>
+          <li>enter tasks run by profiles have the priority specified in Profile Properties, the default is 5.
+          </li><li>exit tasks run by profiles have the priority specified in Profile Properties <b>plus 1001</b>, the default is therefore 1016
+          </li><li>tasks run by <b>widgets</b> or <b>shortcuts</b> can be set in Task Properties when the widget/shortcut is created, the default is 7
+          </li><li>tasks run from scene elements have priority <b>one more</b> than the task which showed the scene
+          </li><li>tasks run from the <b>Test</b> button in the task edit screen have priority 100 by default, long-click the play buttin to choose a different one.
+          </li></ul>
+
+          <p></p>
+          A couple of guidelines are:
+          <ul>
+          <li>if you want a particular task to always interrupt other tasks that may be
+          executing, give it a high priority
+          </li><li>if you have a task that lasts for a while,
+          you probably want to give it a low priority so it doesn't block other tasks
+          from being executed.
+          </li></ul>
+
+          <h4>Action Groups</h4>
+
+          Actions are divided into groups for scheduling based on how long the action takes to execute and what it
+          interferes with:
+
+          <ul>
+          <li><b>Speech</b>: <code>Say, Say To File</code>
+          </li><li><b>Javascript</b>: <code>Javascript</code>
+          </li><li><b>Fix</b>: <code>Get Location</code>
+          </li><li><b>Voice</b>: <code>Get Voice</code>
+          </li><li><b>Proxy</b>: <code>Display Brightness, Query Action, Photo, Photo Series, Photo Series Time</code>
+          </li><li><b>Proxy Scene</b> Enter Key, Menu, Popup, Popup Task Buttons, Variable Query
+          </li><li><b>Other Scenes</b>: the name of the scene being shown
+          </li><li><b>Normal</b>: all other actions
+          </li></ul>
+
+          <h4>Wait Actions</h4>
+          <p>
+          <code>Wait</code> and <code>Wait Until</code> are special cases. The rules for handling them are complicated
+          and try to do the 'best thing' dependent on the situation.
+          </p>
+
+          <h4>Same-Profile Tasks</h4>
+
+          Tasks launched by the same profile by default always execute in the order in which they are launched. Other tasks from the same profile remain completely inactive until any previous task from the same profile is complete. The main purpose of this rule is to correctly handle rapid changes in a profile's activation state.
+          <p>
+          This behaviour can be disabled by deselecting <i>Enforce Task Order</i> in the Profile Properties dialog.
+          </p>
+
+          <h5>Example</h5>
+
+          This example demonstrates the effect of Enforce Task Order and shows also how sub-tasks launched by
+          Perform Task are handled.
+          <pre>Profile: Example
+          Enter Task: Enter1
+           Perform Task, Enter2
+          Exit Task: Exit1
+           Perform Task, Exit2
+          </pre>
+
+          <b>With</b> Enforce Task Order:
+
+          <p>
+          Enter1 and Enter2 are both guaranteed to finish before either of Exit1 or Exit2. Whether Enter1 or
+          Enter2 finishes first depends on their relative priority. Same for Exit1 and Exit2.
+          All 4 tasks compete based on priority against tasks from other profiles. Exit tasks have a higher base
+          priority so will finish before Enter tasks.
+          </p>
+
+          <b>Without</b> Enforce Task Order:
+
+          <p>
+          If the profile goes active and inactive quickly, Enter1, Enter2, Exit1 and Exit2 will all compete
+          purely on priority. Since Exit tasks have higher base priority, Exit1 and Exit2 will probably finish first.
+          </p>
+
+          <h4>Collisions</h4>
+
+          Sometimes a task needs to be executed of which a copy is already executing.
+          This can happen quite often e.g. when a task widget button is pressed twice quickly,
+          or a task contains a Wait action or shows a dialog.
+          <p>
+          The way in which a collision is resolved is specified by the user. There are
+          3 options:
+          </p>
+
+          <ul>
+          <li>the <b>new</b> task is ignored (the default)
+          </li><li>the <b>existing</b> task is aborted and the new one starts from its first action.
+          The current action of the previous task is finished if it is already being carried out.
+          </li><li>both tasks run simultaneously
+          </li></ul>
+
+          <p>
+          Note that the last option can lead to several copies of a task all running at once.
+          </p>
+
+          <h4>Behaviour When Device Off</h4>
+
+          By default, after a few seconds of the screen being off Android will power down the device and thus running
+          tasks will be paused.
+          <p>
+          In the Task Properties dialog, it can be specified that a task should keep running.
+          </p>
+
+          <h5>Dialogs</h5>
+
+          An action that shows some kind of dialog (such as a lock screen, popup, menu)
+          blocks execution of any other action, even one of higher priority, until it is completed.
+
+          <h5>Wait / Wait Until</h5>
+
+          These are exceptions. A wait action can be interrupted by another task's action and
+          will resume (if necessary) when the other task's action is finished.
+
+          <h4>Killing Tasks</h4>
+
+          If you have a problem with a task that never ends, you can manually end tasks
+          with the <b>Kill</b> button in the Task Edit screen.
+
+        <section class="main-section" id="Tasker_Screens">
+          <header>
+            <h2>Tasker Screens</h2>
+          </header>
+          <h2>
+          	Scenes
+          	<img style="float:right" src="icon_tasker.png">
+          </h2>
+          <h3>Introduction</h3>
+          <p>
+          A <i>scene</i> is a graphical user-interface consisting of a collection of <i>elements</i> to which tasks can be attached to be run when the user interacts with them e.g. by tapping them.
+          </p>
+
+          <p>
+          Tasker uses scenes for things like popup dialogs, menus and getting input from the
+          user but scenes can actually be displayed by the user whenever desired, meaning
+          they can be used for things like creating simple user-designed applications or showing extra controls over the top of (selected) existing applications.
+          </p>
+
+          <p>
+          Scenes are completely user-customisable via a drag-and-drop graphical editor</a>.
+          </p>
+
+          <h3>Displaying Scenes</h3>
+
+          <h4>Actions: <code>Enter Key, HTML Popup, Lock, Menu, Popup, Popup Task Buttons</code> and
+          <code>Variable Query</code></h4>
+
+          These actions use a <b>built-in scene</b> with the same name as their action.
+          After creating a task with such an action, the associated scene can be found
+          under the <b>Scenes</b> tab on the main Tasker screen. That scene can be edited so that
+          e.g. all <code>Popup</code> actions have the same style because they all use the same scene.
+          <p></p>
+
+          <p>The parameters specified in the action are applied to the scene before it
+          is show. For instance, if the scene has a <i>Title</i> element it will be
+          set to the title specified in the action and the scene resized appropriately.
+          </p>
+
+          <p>
+          It might be desirable to have a different style for e.g. some <code>Popup</code> actions, in which case:
+          </p>
+
+          <ol>
+          <li>clone the built-in scene long-clicking on it in the <b>Scenes</b> tab
+          </li><li>edit the clone to change the contents
+          </li><li>in a <code>Popup</code> action, specify that the cloned scene should be used
+          by clicking on the <b>Layout</b> parameter in the action edit screen.
+          </li></ol>
+          <p></p>
+
+          <h4>Scene Category Actions: <code>Create Scene, Show Scene, Hide Scene, Destroy Scene</code></h4>
+
+          These allow a completely free hand over when a scene should be displayed and it's
+          life-cycle. They all act on scenes pre-designed in the <b>Scenes</b> tab.
+
+          <p>
+          Usually, only <code>Show Scene</code> and <code>Destroy Scene</code> will be
+          used, however sometimes it's useful for a scene to be created but not visible to
+          the user:
+          </p>
+
+          <ul>
+          <li>by hiding a scene instead of completely destroying it, the settings of the elements
+          are retained for next time it is shown
+          </li><li>the values of the elements in the scene can be changed to track certain
+          events so that the scene can be immediately displayed when required without any
+          configuration
+          </li></ul>
+
+          <h3>Scene Elements</h3>
+
+          Each scene is comprised of a number of elements.
+
+          <p>
+          An element has three main components:
+
+          </p><h4>Geometry</h4>
+
+          It's size and position on the screen. An element's geometry is specified in
+          the scene editor.
+
+          <h4>Content</h4>
+
+          How it looks on the screen.
+
+          <p>
+          Specified under the <b>UI</b> tab in the element editor. Some
+          elements also have a Background tab. A Menu element has an additional Items tab.
+          </p><p>
+
+          </p><h4>Event Tasks</h4>
+
+          What should happen when the user interacts with the element.
+
+          <p>
+          Specified under the right-most tabs after clicking on the element in the element editor.
+          There are different events depending on the type of element. For instance, a Button has
+          tap and long-tap events while a Slider has a value-set event.
+          </p>
+
+          <p>Event tasks are run at priority one higher than the task which displayed the scene
+          </p>
+          <p>Local variables set by event tasks are visible to all tasks in the same scene.</p>
+
+          <h3>Scene Element Actions</h3>
+
+          In the <b>Scenes</b> action category, there are several actions for setting
+          the properties of scene elements. You can use these for a wide variety
+          of purposes e.g.
+
+          <ul>
+          <li>when a slider value is set, change the zoom of an associated map element
+          </li><li>set the size of an element depending on current light level
+          </li><li>animate elements around a scene
+          </li></ul>
+
+          <p>
+          Note that actions that affect scene elements can only be used when the scene has
+          already been created (via <code>Create Scene</code> or <code>Show Scene</code>).
+          The scene does not have to be visible.
+          </p>
+        </section>
+        <section class="main-section" id="Tasker_Variables">
+          <header>
+            <h2>Tasker Variables</h2>
+          </header>
+          <h4>General</h4>
+
+          A variable is a named value which changes over time e.g. the level of the battery, the time of day.
+
+          <p>
+          When Tasker encounters a variable name in a text, it replaces the name with
+          the current value of the relevant variable before carrying out the action.
+          </p>
+          <p>
+          The main purposes of variables are:
+
+          </p><ul>
+          <li><i>dynamic binding</i>: doing something with an action with data which
+          <p></p>
+          is unknown when the task is created e.g. respond to an SMS; the sender
+          is not known until the SMS is received.
+          </li><li>allow flow control within and
+          between tasks
+          </li><li>record data for some future use e.g. passing data between tasks
+          </li></ul>
+
+          <h4>Global vs. Local Variables</h4>
+
+          <p>
+          Variables which have an <b>all-lower-case</b> name (e.g. %fruit_bar) are <i>local</i>, meaning that their value is specific to the task or scene in which they are used.
+          </p>
+
+          <p></p>
+          Variables which have one or more capital letters in their name (e.g. %Car, %WIFI) are <i>global</i>, meaning that wherever they
+          are accessed from the same value is returned.
+          <p></p>
+
+          <h4>Built-In Variables</h4>
+
+          <p>
+          The values of built-In variables are updated automatically by Tasker.
+          </p>
+
+          <h5>Local Built-In Variables</h5>
+
+          <ul>
+          <li><b>Action Error</b><br>
+          <i>%err</i><br>
+          Is set to an integer if an error occurred when running the last action. The actual number
+          can signify the error which occurred, but is usually 1 for most Tasker actions (notable
+          exception: <code>Run Shell</code> and plugins). Every action sets or clears it, so it must be saved (e.g. with Variable Set) if it will be needed later than in the immediate next action.
+
+          </li><li><b>Action Error Description</b><br>
+          <i>%errmsg</i><br>
+          A description of the error which <b>last resulted in %err being set</b>. Currently never set by
+          Tasker but possibly by some plugin actions.
+
+          </li><li><b>Task Priority</b><br>
+          <i>%priority</i><br>
+          The priority of the running task. The priority determines which task
+          executes its next action when several tasks are running together.<br>See
+          also: Task Scheduling
+
+          </li><li><b>Task Queue Time</b><br>
+          <i>%qtime</i><br>
+          How long (seconds) the running task has been running.
+          <br>
+                Note that tasks can be interrupted by higher priority tasks, so this number
+                is not necessarily the total run-time of the task.
+
+          <br>
+          </li><li><b>Task Caller</b><br>
+          <i>%caller</i><br>
+          A variable array tracing the origin of the current running task. <i>%caller1</i> gives the origin
+          of the current task, <i>%caller2 </i>the origin of <i>%caller1</i> etc.
+          <p>
+          Example: if task A uses action <code>Perform Task</code> to start task B, then when task A is run by pressing
+          the Play button in the task edit screen, <i>%caller1</i> in task B will show <b>task=A</b>, <i>%caller2</i> will show <b>ui</b>.
+          </p><p>
+          The format of each entry in the array is <i>callertype</i>(<b>=</b><i>callername</i>(<b>:</b><i>subcallername</i>))
+          </p><p>
+
+          Caller types ares detailed below:
+          </p><ul>
+          	<li><b>profile</b><br>
+          	a profile (when it's state changes). <i>callername</i> is either <b>enter</b> or <b>exit</b> depending on whether the profile
+          	activated or deactivated. <i>subcallername</i> is the name of the profile, if it has one, otherwise <b>anon</b>
+          	</li><li><b>scene</b><br>
+          	a scene event, with <i>callername</i> being the scene name. For element events, <i>subcallername</i> is the element name. For action bar button presses, <i>subcallername</i> is the label if one was given. For scene-global events (e.g. Key), <i>subcallername</i> is event type
+          	</li><li><b>ui</b><br>
+          	the Play button in the task edit screen in the Tasker UI
+          	</li><li><b>launch</b><br>
+          	clicking a child application icon in the launcher
+          	</li><li><b>nbutton</b><br>
+          	a notification action button, either from Tasker's permanent notification or one created with one of the Notify actions.
+          	<i>callername</i> specifies the label of the button if present.
+          	</li><li><b>external</b><br>
+          	an external application
+          	</li><li><b>qstile</b><br>
+          	a Quick Settings tile. <i>callername</i> specifies the label of the tile.
+          	</li><li><b>appshort</b><br>
+          	an app shortcut (accessed via long-click on the Tasker icon). <i>callername</i> specifies the label of the tile.
+          	</li><li><b>task</b><br>
+          	another task, from a Perform Task action. <i>subcallername</i> is the task name, if it has one, otherwise <b>anon</b>
+          </li></ul>
+          </li></ul>
+
+          <h5>Global Built-In Variables</h5>
+
+          <ul>
+          <li><b>Airplane Mode Status</b><code>(dynamic)</code><br>
+          <i>%AIR</i><br>
+          Whether Airplane Mode is <b>on</b> or <b>off</b>
+
+          </li><li><b>Airplane Radios</b><br>
+          <i>%AIRR</i><br>
+          A comma-separated list of the radios which will be <b>disabled</b> when entering Airplane Mode.<br>
+          Common radio names are: <i>bluetooth, cell, nfc, wifi, wimax</i>.
+
+          </li><li><b>Battery Level</b>
+          <br><i>%BATT</i> <br>
+          Current device battery level from 0-100.
+
+          </li><li><b>Bluetooth Status</b> 	<code>(dynamic)</code><br>
+          <i>%BLUE</i> <br>
+          Whether Bluetooth is <b>on</b> or in some other state (<b>off</b>).<br>
+
+          </li><li><b>Calendar List</b><br>
+          <i>%CALS</i><br>
+          Newline-separated list of calendars available on the device.
+          <br>Each entry is in the format <i>calendarprovider:calendarname</i>.<br>
+          Example usage:
+          <pre>	Variable Set, %newline, \n
+          Variable Split, %CALS, %newline
+          Flash, %CALS(#) calendars, first one is %CALS(1)</pre>
+          For the sign <i>\n</i>, press carriage-return on the keyboard.
+          </li><li><b>Calendar Event Title / Descr / Location</b>
+          <i>%CALTITLE / %CALDESCR / %CALLOC</i><br>
+          The title, description and location of the <b>current</b> calendar event, if there is one. If there are multiple current calendar events the
+          variables refer to the <b>shortest</b>.
+          <br>Tip: find other details about the current event(s) using the <code>Misc / Test</code> action, specifying %TIMES for the data.
+
+          </li><li><b>Call Name / Number/ Date / Time (In)</b> <code>(dynamic, monitored)</code><br>
+          <i>%CNAME / %CNUM / %CDATE / %CTIME</i><br>
+          The caller name, number, date and time of the current (if a call is in progress) or last call received.<br>
+          Caller number is <b>0</b> if it's unknown.<br>
+          Caller name is <b>?</b> if it's unknown (probably because the caller number was blocked)
+          and set to the caller number if the contact couldn't be looked up.
+          It's unavailable on Android versions prior to 2.0.
+
+          </li><li><b>Call Name / Number/ Date / Time / Duration (Out)</b><code>(dynamic, monitored)</code><br>
+          <i>%CONAME / %CONUM / %CODATE / %COTIME / %CODUR</i><br>
+          The called name, number, date and time of the last (<b>not</b> the current) outgoing call made.<br>
+          Called Name	is set to the called number if the contact couldn't be looked up.
+          It's unavailable on Android versions prior to 2.0.
+
+          </li><li><b>Cell ID</b> <code>(monitored,dynamic)</code>
+          <br><i>%CELLID</i><br>
+          The current cell tower ID if known.<br>
+          If you are using a Cell Near state, note that sometimes the Cell Near state will stay active
+          even though %CELLID reports that the tower ID is unknown or invalid; that is because Cell Near only
+          responds to valid IDs to prevent the state becoming inactive e.g. due to a service interruption.
+          <br>
+          For backwards compatibility, UMTS cells are reported with a GSM prefix.
+          <br>
+          From Android 4.2, Tasker version 4.3+, cells could be found from 2 different network types simultaneously. In that case, the value is reported with preference for the network type leftmost on the list: GSM, CDMA, UMTS, LTE.
+
+          </li><li><b>Cell Signal Strength</b> <code>(monitored,dynamic)</code>
+          <br><i>%CELLSIG</i>
+          <br>
+          The current phone signal level from 0-8 inclusive on a rougly linear scale. On some phones, the level will rise in steps of 2 (0,2,4,6,8). The value is -1 if the value
+          is unknown or there is e.g. no service.
+          <br>
+          From Android 4.2, Tasker version 4.3+, cells could be found from 2 different network types simultaneously. In that case, the value is reported with preference for the network type leftmost on the list: GSM, CDMA, UMTS, LTE.
+          <br>
+          There is a bug with some Android versions that the reported signal strength is not updated until the
+          device is turned off and on.
+
+          </li><li><b>Cell Service State</b> <code>(monitored,dynamic)</code>
+          <br><i>%CELLSRV</i><br>
+          The current phone service state. One of <i>unknown, service, noservice, emergency, nopower</i>.
+
+          </li><li><b>Clipboard Contents</b><code>(monitored,dynamic)</code>
+          <i>%CLIP</i> <br>
+          The current contents of the system clipboard. Please note that the clipboard can't be accessed while the device's screen is securely locked.
+
+          </li><li><b>CPU Frequency</b><br>
+          <i>%CPUFREQ</i> <br>
+          The current frequency CPU 0 is running at.  See also: CPU Control.
+
+          </li><li><b>CPU Governor</b><br>
+          <i>%CPUGOV</i> <br>
+          The current governor controlling the frequency of CPU 0. See also: CPU Control.
+
+          </li><li><b>Date</b>
+          <br><i>%DATE</i> <br>
+          	Current human-readable date.
+
+          </li><li><b>Day of the Month</b>
+          <br><i>%DAYM</i> <br>
+          Current Day of the Month, starting at 1.
+
+          </li><li><b>Day of the Week</b>
+          <br><i>%DAYW</i> <br>
+          Current Day of the Week starting with Sunday.
+
+          </li><li><b>Device ID / Manufacturer / Model / Product</b>
+          <br><i>%DEVID / %DEVMAN / %DEVMOD / %DEVPROD</i><br>
+          The ID, manufacturer, model and product name of the device. <br>Note: ID is <b>not</b> a unique
+          identifier for the device, but rather for the hardware of the device. See also: %DEVTID.
+
+          </li><li><b>Device Telephony ID</b>
+          <br><i>%DEVTID</i><br>
+          Returns the unique telephony-based ID for the device (e.g. for GSM the IMEI, for CDMA the
+          MEID or ESN). <br>Not available on all devices.
+
+          </li><li><b>Display Brightness</b>
+          <i>%BRIGHT</i> <br>
+          Current screen brightness, 0-255. On some devices, if the Android setting Auto Brightness is enabled, the
+          value will always be 255.
+
+          </li><li><b>Display Timeout</b>
+          <i>%DTOUT</i> <br>
+          Current system screen timeout (seconds).
+
+          </li><li><b>Email From / Cc / Subject / Date / Time</b> <code>(dynamic)</code><br>
+          <i>%EFROM / %ECC / %ESUBJ / %EDATE / %ETIME</i><br>
+          The From, Cc, Subject, Received Date and Received Time of the last email received
+          by the K9 email agent.
+
+          </li><li><b>Free Memory</b><br>
+          <i>%MEMF</i><br>
+          System free memory remaining in MB.
+
+          </li><li><b>GPS Status</b><br> (monitored,dynamic Gingerbread+)
+          <i>%GPS</i><br>
+          Whether the system GPS receiver is <b>on</b> or <b>off</b>.
+
+          </li><li><b>Heart Rate</b> <code>(monitored,dynamic)</code>
+                <br><i>%HEART</i><br>
+
+                The current detected heart rate in beats per minute.
+          <br>See also: state <i>Heart Rate</i>.
+          <br>The value will be negative for no contact (-1), accuracy unreliable (-2) or some other problem (-3)
+
+          </li><li><b>HTTP Response Code / Data / Content Length</b><code>(dynamic)</code>
+          <i>%HTTPR / %HTTPD / %HTTPL</i><br>
+          Values from the last HTTP POST/GET action.<br>
+          If the server doesn't return a content length, %HTTPL will be calculated from the returned
+          data where possible.
+
+          </li><li><b>Humidity</b> <code>(monitored,dynamic)</code>
+                <br><i>%HUMIDITY</i><br>
+
+                The relative ambient air humidity in percent.
+          <br>See also: state <i>Humidity</i>.
+
+          </li><li><b>Input Method</b><br>
+          <i>%IMETHOD</i><br>
+          The current active input method. Consists of 4 parts separated by commas: Method Name, SubType Name, Mode, Locale.
+          <br>To access particular parts, use the <i>Variable Split</i> action.
+
+          </li><li><b>Interrupt Mode</b> <code>(dynamic)</code>
+          <br><i>%INTERRUPT</i><br>
+          Only available on Android 5.0+, <b>requires Tasker's notification access service to be enabled</b>, see Android's
+          Sound &amp; Notification settings.
+          <br>
+          <br>Android 5.0+: the current state of interruptions mode on the device: <b>none</b>, <b>priority</b> or <b>all</b>
+          <br>See Also: action <i>Interrupt Mode</i>
+          <br>
+          <br>Android 6.0+: the current state of Do Not Disturb mode on the device: <b>none</b>, <b>priority</b>, <b>all</b> or <b>alarms</b>
+          <br>See Also: action <i>Do Not Disturb</i>
+
+          </li><li><b>Keyguard Status</b><br>
+          <i>%KEYG</i><br>
+          Whether the Keyguard is <b>on</b> or <b>off</b>
+
+          </li><li><b>Last Application</b><br>
+          <i>%LAPP</i><br>
+          The name of the application that was in the foreground before the current one e.g. Maps.
+
+          </li><li><b>Last Photo</b><br>
+          <i>%FOTO</i><br>
+          The filesystem path to the last photo taken by Tasker or the
+          standard system camera application.
+
+          </li><li><b>Light Level</b> <code>(monitored,dynamic)</code>
+          <br><i>%LIGHT</i><br>
+          The last recorded light level in lux.<br>Note that Android does not return a value until the light
+          level changes, so to test the sensor is working you should put it near a bright light initially.
+          <br>May not change when the device display is off, see <code>Menu / Prefs / More / Display Off Monitoring / Light Sensor</code>.
+
+          </li><li><b>Location</b> <code>(dynamic)</code>
+          <br><i>%LOC</i><br>
+          The latitude and longitude of the last GPS fix.
+          <br>See note.
+
+          </li><li><b>Location Accuracy</b> <code>(dynamic)</code>
+          <br><i>%LOCACC</i><br>
+          The accuracy in metres of the last GPS fix.
+          <br>See note.
+
+          </li><li><b>Location Altitude</b> <code>(dynamic)</code>
+          <br><i>%LOCALT</i><br>
+          The altitude in metres of the last GPS fix, or 0 if unavailable.
+          <br>See note.
+
+          </li><li><b>Location Speed</b> <code>(dynamic)</code>
+          <br><i>%LOCSPD</i><br>
+          The speed in metres/second at the last GPS position fix or 0 if unavailable.
+          <br>See note.
+
+          </li><li><b>Location Fix Time Seconds</b>  <code>(dynamic)</code>
+          <br><i>%LOCTMS</i><br>
+          The time in seconds of the last GPS fix. To get age of fix, take this away from %TIMES.
+          <br>This value is not set until an offset of the GPS time from the fixed time has
+          been calculated (should be after the first GPS fix) because the value is meaningless
+          until that point.
+          <br>See note.
+
+          </li><li><b>Location (Net)</b> <code>(dynamic)</code>
+          <br><i>%LOCN</i><br>
+          The latitude and longitude of the last network location fix.
+          <br>See note.
+
+          </li><li><b>Location Accuracy (Net)</b> <code>(dynamic)</code>
+          <br><i>%LOCNACC</i><br>
+          The accuracy in metres of the last network location fix.
+          <br>See note.
+
+          </li><li><b>Location Fix Time (Net)</b> <code>(dynamic)</code>
+          <br><i>%LOCNTMS</i><br>
+          The time in seconds of the last net location fix. To get age of fix, take this away from %TIMES.
+          <br>See note.
+
+          </li><li><b>Magnetic Field Strength</b> <code>(monitored,dynamic)</code>
+          <br><i>%MFIELD</i><br>
+
+          The total magnitudes in micro-Teslas of the magnetic fields acting on all three axis of the devices sensor.
+          <br>Updated once per second.<br>See Also: state <code>Magnetic Field</code>.
+
+          </li><li><b>Music Track</b> <code>(monitored,dynamic)</code>
+          <br><i>%MTRACK</i><br>
+          The current playing music track, supported for:<ul>
+          	<li>Tasker actions <i>Music Play</i> and <i>Music Play Dir</i>
+          	</li><li>Built-in Android music-player, probably not on all devices however
+          	</li><li>Power AMP
+          	</li><li>BeyondPod (Tasker v1.2.1+)
+          	</li><li>Phantom Music Control Pro
+          	</li><li>Media Utilities
+          </li></ul>
+          Priority: if both Tasker and one of the other supported apps are playing simultaneously, the
+          non-Tasker track will be shown. If more than one of the other supported apps is playing
+          simultaneuosly, behaviour is unspecified.
+          <br>Notes:<ul>
+          	<li> if you don't have a supported player, you could try Phantom Music Control Pro or Media Utilities, which support a lot of
+          	players and should pass the info on to Tasker
+          	</li><li>pausing a track clears the variable, unpausing sets it again
+          	</li><li>your music player may need an option enabled in order to broadcast the track information, or
+          	the broadcast may only be available in a 'pro' version
+          </li></ul>
+
+          </li><li><b>Muted</b>
+          <br><i>%MUTED</i><br>
+          Whether the microphone is currently muted (<b>on</b>) or not (<b>off</b>).
+
+          </li><li><b>Night Mode</b>
+          <br><i>%NIGHT</i><br>
+          The current Android Night Mode.<br>
+          One of <b>on</b>, <b>off</b> or <b>auto</b>.<br>
+          If <b>auto</b>, Android will decide whether it should be in Night Mode itself.
+
+          </li><li><b>Notification Title</b> <code>(monitored, dynamic)</code>
+          <br><i>%NTITLE</i><br>
+          The title of the last notification shown in the status bar. Prior to KitKat, requires Tasker's accessibility server
+          to be running (see Android Accessibility Settings). From KitKat, requires Tasker's Notification Listener service
+          to be running instead.
+          <br>
+          In a task running as a result of a <code>Notification</code> or <code>Notification Removed</code> event, use variable %evtprm2 instead
+          of %NTITLE. This is much more reliable and you have access to other parts of the notification (%evtprm3 etc)
+          <br>
+          Notifications generated by Tasker are not shown.
+
+          </li><li><b>Phone Number</b>
+          <br><i>%PNUM</i><br>
+
+          The current phone number of the device, if it's in service.<br>
+          On some phones it doesn't work (Android limitation), seems related to the type of SIM.
+
+          </li><li><b>Pressure</b> <code>(monitored,dynamic)</code>
+          <br><i>%PRESSURE</i><br>
+
+          The current air pressure on the device in millibars.
+          <br>May not change when the device display is off, see <code>Menu / Prefs / Monitor / Display Off Monitoring / Pressure Sensor</code>.
+
+          </li><li><b>Profiles Active</b> 	<code>(dynamic)</code>
+          <br><i>%PACTIVE</i><br>
+
+          A comma-separated list of the currently active, named profiles in activation order. Duplicate
+          names will appear on the list only once. The list always starts and ends with a comma
+          to make matching easier, if it's not empty.
+
+          </li><li><b>Profiles Enabled</b> <code>(dynamic)</code>
+          <br><i>%PENABLED</i><br>
+
+          A comma-separated list of the currently enabled, named profiles in creation order. Duplicate
+          names will appear on the list only once. The list always starts and ends with a comma
+                to make matching easier, if it's not empty.
+
+          </li><li><b>Roaming</b>
+          <br><i>%ROAM</i><br>
+          <b>on</b> if device is roaming on the current telephone network, otherwise <b>off</b>.
+
+          </li><li><b>Root Available</b>
+          <br><i>%ROOT</i><br>
+          <b>yes</b> if root functions are available on this device, otherwise <b>no</b>.
+
+          </li><li><b>Screen</b> 	<code>(dynamic)</code>
+          <br><i>%SCREEN</i><br>
+          Whether the screen is on (value <b>on</b>) or off (value <b>off</b>).
+
+          </li><li><b>SDK Version</b>
+          <br><i>%SDK</i><br>
+          The numeric Android SDK version
+          of the device.
+
+          </li><li><b>Silent Mode</b> <code>(dynamic)</code>
+          <br><i>%SILENT</i><br>
+          The current state of silent mode: <b>off</b>, <b>vibrate</b> or <b>on</b>.
+          <br>
+          From Android 5.0+ this variable is intended to only reflect whether the device
+          is in vibrate mode (<b>vibrate</b>) or not (any other value), but the <b>on</b> value is included for backwards
+          compatibility and set when the device is not in vibrate mode and the interrupt mode is <b>none</b>
+          or <b>priority</b>.
+          <br>
+          See Also: variable <i>%INTERRUPT</i>, actions <i>Silent Mode</i> and <i>Interrupt Mode</i>.
+
+          </li><li><b>SIM Serial Number</b>
+          <br><i>%SIMNUM</i><br>
+          The serial number of the SIM card, if one is present and accessible.
+          <br>If the SIM has not been unlocked it will not be available.
+
+          </li><li><b>SIM State</b>
+          <br><i>%SIMSTATE</i><br>
+          The current state of the SIM card.<br>
+          One of <b>unknown</b>, <b>absent</b>, <b>pinrequired</b>, <b>pukrequired</b>, <b>netlocked</b> or <b>ready</b>.
+
+          </li><li><b>Speakerphone</b>
+          <br><i>%SPHONE</i><br>
+          Whether the speakerphone is <b>on</b> or <b>off</b>
+
+          </li><li><b>Speech</b> <code>(dynamic)</code>
+          <br><i>%SPEECH</i><br>
+          The current utterance as a result of a <i>Say</i> or <i>Say File</i> action, if applicable.
+
+          </li><li><b>Tasks Running</b> <code>(dynamic)</code>
+          <br><i>%TRUN</i><br>
+          A comma-separated list of any named tasks which are currently running. The list always starts
+           and ends with a comma to make matching easier, if it's not empty.
+
+
+          </li><li><b>Telephone Network</b> <code>(dynamic, monitored)</code>
+          <br><i>%TNET</i><br>
+
+          The current telephony network operator the device is using.
+          <br>May be unreliable on CDMA networks
+
+          </li><li><b>Temperature</b> <code>(monitored,dynamic)</code>
+                <br><i>%TEMP</i><br>
+
+                The current ambient temperature in degrees Celsius.
+                <br>May not change when the device display is off, see <code>Menu / Prefs / Monitor / Display Off Monitoring / Temp. Sensor</code>.
+          <br>See also: state <i>Temperature</i>.
+
+          </li><li><b>Text From/Date/Subject/Time</b> <code>(monitored)</code>
+          <br>
+          <i>%SMSRF / %SMSRN / %SMSRB / %MMSRS / %SMSRD / %SMSRT</i><br>
+          The sender address, name, body, subject, date and time of the last text (SMS or MMS) received.
+          <br>These variables will be empty until the first time a text is received after
+          they have been referenced because Tasker does not monitor texts unless it's needed.<br>
+          <i>Name</i> is set to sender address of no contact could be looked up.
+          It's unavailable on Android versions prior to 2.0.
+          <br><i>Body</i> (%SMSRB) is only set for SMSs.
+          <br><i>Subject</i> (%MMSRS) is only set for MMSs.
+
+          </li><li><b>Time</b>
+          <br><i>%TIME</i> <br>
+          Current human-readable time separated by a period e.g. 10.59
+
+          </li><li><b>Tether</b> (dynamic)
+          <br><i>%TETHER</i> <br>
+          A comma-separated list of enabled tethering forms i.e. connections over which another device can connect to this
+          one in order to use its internet connection.<br>
+          The possible forms are <b>wifi</b>, <b>usb</b> or <b>bt</b>.<br>
+          BT will only be present when an actual client is connected via BT for using the devices network connection, whereas
+          the others will be present as soon as the functionality is enabled (Android bug/limitation).
+
+          </li><li><b>Time MilliSeconds</b>
+          <br><i>%TIMEMS</i><br>
+          The current time in milliseconds.<br> (milliseconds since some time in January, 1970, if you must know).
+
+          </li><li><b>Time Seconds</b>
+          <br><i>%TIMES</i><br>
+          The current time in seconds.<br> (seconds since some time in January, 1970, if you must know).
+
+          </li><li><b>UI Mode</b> <code>(monitored,dynamic)</code>
+          <br><i>%UIMODE</i><br>
+          The current Android UI mode.<br>
+          One of <b>car</b>, <b>desk</b>, <b>appliance</b>, <b>tv</b> (television), <b>watch</b>, <b>undef</b> (undefined) or <b>normal</b>.
+
+          </li><li><b>Uptime Seconds</b>
+          <br><i>%UPS</i><br>
+          The number of seconds since the device last booted.
+
+          </li><li><b>Volume - Alarm/Call/DTMF/Media/Notification/Ringer/System</b> <code>(dynamic)</code><br>
+          <i>%VOLA / %VOLC / %VOLD / %VOLM / %VOLN / %VOLR / %VOLS</i><br>
+          Current audio channel volume level.<br>
+          On some devices, volume changes are not picked up dynamically, on others not
+          when using the phone app.
+
+          </li><li><b>WiFi Info</b><br>
+          <i>%WIFII</i><br>
+          When connected to an Access Point (AP), shows human-readable data about the AP. When not connected,
+          show details of the most recent Wifi scan results for nearby APs.
+          <br>On Android 8.1+, may require basic location services to be enabled in Android settings.<br>
+
+          </li><li><b>WiFi Status</b> 	<code>(dynamic)</code><br>
+          <i>%WIFI</i><br>
+          Whether WiFi is <b>on</b> or <b>off</b>.
+          Note: if WiFi is enabling or disabled, in fact anything but enabled, it's classed as off.
+
+          </li><li><b>Wimax Status</b> <br>
+          <i>%WIMAX</i><br>
+          Whether Wimax is <b>on</b> or <b>off</b>.
+          Note: if Wimax is enabling or disabled, in fact anything but enabled, it's classed as off.
+
+          </li><li><b>Window Label</b> <code>(monitored,dynamic)</code><br>
+          <i>%WIN</i><br>
+          The label of the current window, which could be a full-screen activity or a dialog.
+          <br>Not set if the label is unknown.
+          <br>For some windows, the label might be that of the first item in the window e.g. a menu entry or even a button.
+          </li></ul>
+
+          <h5>General Notes</h5>
+
+          <p>
+          Variables marked <code>dynamic</code> in the list above trigger changes in <i>Variable Value</i> states
+          and <i>Variable Set</i> events whenever their value changes.
+          </p>
+
+          <p>
+          Variables marked <code>monitored</code> will cause the relevant monitor to startup to track their state
+          when they are used in contexts or tasks which are used by widgets or <b>enabled</b> profiles.
+          For instance, %CELLID used in a Flash action will cause cell location to be tracked.
+          </p>
+          <p>
+          Limitation: monitored variables cannot be detected in anonymous shortcuts.
+          </p>
+
+          <h5>Note On Location Variables</h5>
+
+          <p>
+          When the relevant provider (Net or GPS) of a location context is active, these variables report the values from the provider,
+          which may be more recent than Tasker has seen if other applications are asking for location.
+          </p>
+          <p>
+          When the relevant provider is <b>not</b> active, these variables report the last values <b>seen by Tasker</b>,
+          which could be the result of a <code>Get Location</code> action or of monitoring for a <code>Location Context</code>.
+          </p>
+          <p>
+          That means the the reported fix times could <b>go backwards</b>, if you turn off the location provider
+          between two uses of the variables.
+          </p>
+
+          <p>
+          Location variables can also be manually updated by running the <code>Get Location</code> action.
+          </p>
+
+          <h4>User Variables</h4>
+
+          The action <i>Variable Set</i> (and several others) can be used to create new variables. Variable names have the following restrictions:
+
+          <ul>
+          <li>they must start with the <b>%</b> character
+          </li><li>they are case-sensitive
+          </li><li>then must at least a further <b>3</b> alphanumeric characters
+          </li><li>they can also contain the underscore character (_) but not start or end with it
+          </li></ul>
+
+          <p></p>
+          <p>In general, it's best to use local variables wherever possible because:
+          </p>
+
+          <ul>
+          <li>you know they won't be interfered with by other tasks or scenes
+          </li><li>they are more efficient in several ways
+          </li></ul>
+          <p>
+          Note: multiple copies of the same task running at the same time each have their own separate copy of their local variables.
+          </p>
+
+          <h6>Scene-Local Variables</h6>
+
+          <p>
+          Each scene has its own set of local variables which it shares with
+          the task that created it; both the scene and task
+          see changes to the variables made by either.
+          </p>
+
+          <p>
+          Any task which starts as a result of a scene event (e.g. a tap on an element)
+          also shares the variables of the scene (and thus of the original
+          task which created the scene).
+          </p>
+
+          <p>
+          As a consequence, a task started by a scene event (e.g. Tap on an element)
+          which shows a new scene e.g. via the <i>Show Scene</i> action, will result in
+          the second scene sharing the variables of the first scene.
+          </p>
+
+          <p>
+          When a task shows a scene that was created by a different task (or a different copy
+          of the same task) and subsequently hidden, the task's variables are <b>copied</b> to the scene variables (overriding
+          values of variables which already exist) but
+          the task does <b>not share</b> the scene variables and cannot see changes to them.
+          </p>
+
+
+
+          <h5>Escaping Variable Names</h5>
+
+          If you want to prevent a variable name being replaced, put a <b>\</b> in front of it e.g.
+
+          <blockquote>
+          <code>Variable Set, %new, \%old</code>
+          </blockquote>
+
+          Will set the value of <i>%new</i> to <i>%old</i>, <b>not</b> the <b>value</b> of <i>%old</i>.
+          <p>In order to precede a variable name with a <b>\</b> you can escape the backslash e.g.
+          </p><p>
+
+          </p><blockquote>
+          <code>Variable Set, %new, \\%old</code>
+          </blockquote>
+
+          Will set the value of <i>%new</i> to <b>\</b> followed by the <b>value</b> of <i>%old</i>.
+
+          <h5>Variable References</h5>
+
+          It's possible to indirectly refer to variables by preceeding one or
+          more extra <b>%</b> signs to the start of the variable name.
+          For example:
+
+          <blockquote><code>
+          Variable Set, %colour, red<br>
+          Variable Set, %varname, colour<br>
+          Flash %%varname
+          </code></blockquote>
+
+          <p>
+          ... will flash <b>red</b>.
+          </p>
+          <p>
+          Using this notation it's possible to assign variables whose name is
+          not known beforehand:
+
+          </p><blockquote><code>
+          Read File, variablename.txt, To Var, %varname<br>
+          Variable Set, %%varname, red
+          </code></blockquote>
+
+          <p>
+          This will set the variable whose name is stored in the file <code>variablename.txt</code> to <b>red</b>.
+          </p>
+
+
+          <p>
+          You can nest references as deeply as you like (e.g. <code>%%%%var</code>)
+          but mental stress and bugs are sure to follow.
+          </p>
+          <p>
+          If any part of the chain has an invalid variable name then the original
+          reference will be returned. In the first example, if <code>%varname</code>
+          is set to <code>!!!</code>, then <b>%%varname</b> will be flashed instead
+          of <b>red</b>.
+          </p>
+
+          <h5>Variable Lifetime</h5>
+
+          The value a <b>global</b> variable holds lasts until Tasker is uninstalled if
+          it is not changed by any task.
+          <p><b>Local</b> variables are lost at the end of the task they were created in, or
+          when the parent scene is destroyed in the case of tasks called from scenes.
+          </p>
+
+          <h5>Uninitialized Variables</h5>
+
+          <p>
+          User-variables which have not had a value assigned do not have replacements carried out e.g. in the expression <i>I love %fruit</i>, if
+          %fruit is uninitialized, the expression remains as it is, otherwise %fruit is replaced with the value.
+          </p>
+          <p>
+          Exception: uninitialized variables used in mathematical expressions are replaced with 0.
+          </p>
+
+          <h4>Variables In Plugins</h4>
+
+          Plugin developers can tell Tasker to replace variables
+          it finds in plugin strings with their current Tasker value. If you have a plugin
+          which doesn't support this, send the developer this URL
+
+          <p>
+          which has the relevant details.
+          </p>
+
+          <h4>Variable Arrays</h4>
+
+          Tasker supports pseudo-arrays.
+          <p>
+          They are especially useful when used with the <code>For</code> action, since you can
+          perform a set of actions on each element in turn e.g. list a set of files then
+          test each one.
+          </p>
+
+          <h5>Examples</h5>
+
+          <p>
+          If the four variables <b>%arr1, %arr2, %arr3, %arr4</b> hold respectively <b>a, b, c</b> and <b>d</b>
+          then we have an array with 4 <i>elements</i>.
+          These variables can be used just like any other, however it is also possible to access
+          them in special ways. Here are some examples:
+          </p>
+          <ul>
+          <li><b>%arr(#)</b><br>
+          The number of defined array elements (<b>4</b> in this case)
+          </li><li><b>%arr(#&gt;)</b><br>
+          The index of the first defined array element, or <b>0</b> if none are defined (<b>1</b>).
+          </li><li><b>%arr(#&lt;)</b><br>
+          The index of the last defined array element, or <b>0</b> if none are defined (<b>4</b>)
+          </li><li><b>%arr(#?b/c)</b><br>
+          A comma-separated list of the array indices (lowest to highest) with matching values, or <b>0</b> if none match (<b>2,3</b> in the example)
+          </li><li><b>%arr(#?~Rregex here)</b><br>
+          Same as above but with regex matching
+          </li><li><b>%arr(&gt;)</b><br>
+          The contents of the first defined array element (<b>a</b>)
+          </li><li><b>%arr(&lt;)</b><br>
+          The contents of the last defined array element (<b>d</b>)
+          </li><li><b>%arr()</b> or <b>%arr(:)</b><br>
+          All of the array elements separated by commas (<b>a,b,c,d</b>)
+          </li><li><b>%arr(2)</b> or just <b>%arr2</b><br>
+          The content of the element with index 2 (<b>b</b>)
+          </li><li><b>%arr(2:4)</b><br>
+          Contents of defined elements with indices 2 to 4 (<b>b,c,d</b>)
+          </li><li><b>%arr(:3)</b><br>
+          All the defined elements with indices up to 3 (<b>a,b,c</b>)
+          </li><li><b>%arr(3:)</b><br>
+          All the defined elements with indices starting from 3 (<b>c,d</b>)
+          </li><li><b>%arr(1:2)</b><br>
+          All the defined elements with indices from 1 to 2 (<b>a,b</b>)
+          </li></ul>
+
+          Notes:
+
+          <ul>
+          <li>arrays will virtually always have all their elements defined so e.g. %arr(&gt;) will be the same as %arr(1), %arr(#) will be the same as %arr(#&lt;)
+          </li><li>index specifiers can themselves be variables (e.g. %arr(1:%MAX) or %arr(#?%FINDME)) but <b>not</b> variable arrays
+          </li></ul>
+
+          <h5>Creating An Array</h5>
+
+          <ol>
+          <li>using <code>Array Set</code>:<br>
+          <b>Array Set, %arr, a b c d</b>
+          </li><li>using <code>Variable Split</code> on an existing (simple) variable:<br>
+          <b>Variable Set %arr a b c d</b><br>
+          <b>Variable Split %arr</b><br>
+          </li><li>by assigning individual elements with <code>Variable Set</code>:<br><b>Variable Set, %arr3, c</b>.
+          </li><li>using <code>Array Push</code> to add an initial element
+          </li><li>some other actions also create arrays for their results e.g. <code>List Files</code>.
+          </li></ol>
+
+          <h5>Inserting Elements</h5>
+
+          Use the <code>Array Push</code> action.
+
+          <p>
+          The <i>Fill Spaces</i> parameter might need more explanation. It is only relevant if one or more of the array elements are undefined. As an example, if we have the array elements %arr1 and %arr3 containing <b>apple</b> and <b>banana</b>:
+          </p>
+          <ul>
+          <li><b>Array Push %arr1, 1, pear</b><br>leaves %arr1, %arr2 and %arr4 containing <b>pear</b>, <b>apple</b> and <b>banana</b>.<br>
+          </li><li>but <b>Array Push %arr2, 1, pear, Fill Spaces</b><br>leaves %arr1, %arr2 and %arr3 containing <b>pear</b>, <b>apple</b> and <b>banana</b>.
+          </li></ul>
+
+          <h5>Removing Elements</h5>
+
+          <p>
+          Use the <code>Array Pop</code> action. Note the difference between <code>Array Pop</code> and <code>Variable Clear</code>:
+          <code>Pop</code> reduces the number of elements in the array, while <code>Clear</code> merely changes elements to undefined.
+          </p>
+
+          <p>
+          Example: if we have the array elements %arr1, %arr2, %arr3 containing <b>apple</b>,<b>pear</b> and <b>banana</b>:
+          </p>
+          <ul>
+          <li><b>Variable Clear %arr2</b><br>leaves %arr1 and %arr3 containing <b>apple</b> and <b>banana</b>.<br>
+          </li><li>but <b>Array Pop %arr2</b><br>leaves %arr1 and %arr2 containing <b>apple</b> and <b>banana</b>.
+          </li></ul>
+
+          <h5>Deleting An Array</h5>
+
+          Use <code>Array Clear</code>.<p>In most cases you could also use <b>Variable Clear %arr*</b> with Pattern Matching checked,
+          but that would also delete variables called e.g. %arrTOODEETOO so <code>Array Clear</code> is safer.</p>
+
+          <h5>Sorting</h5>
+
+          The <code>Array Process</code> action offers various sorting options, amongst other things.
+
+          <h5>Array Efficiency</h5>
+
+          Arrays are intended for convenience when processing high-level data, not for e.g.
+          processing astronomical data.  Doing thousands of array actions will likely
+          take several seconds (although mostly due to the housekeeping work done by Tasker
+          in-between each action rather than due to the array operations themselves).
+          <p></p>
+          <p>
+          In terms of storage efficiency, they are also fairly hopeless. You probably do not
+          want to store tens of thousands of items in an array.
+          </p>
+        </section>
+        <section class="main-section" id="Tasker_Power_Usage">
+          <header>
+            <h2>Tasker Power Usage</h2>
+          </header>
+
+          Internally, Tasker does its best to keep power usage down. Following are some macro-strategies to
+          achieve this.
+
+          <h4>Context Monitoring</h4>
+
+          <p>
+          When a profile contains multiple contexts, power is saved by only monitoring for changes in order of
+          the least-power-hungry first. For example, in a profile with a Time and App context, Tasker will not
+          decide that it needs to monitor for a changing application unless the Time context is active (because the
+          profile cannot become active until both contexts are active).
+          </p>
+
+          <p>Tasker rates contexts for power-hungriness in the following (ascending) order:
+          </p>
+          <ul>
+          	<li>Other State
+          	</li><li>Day / Time
+          	</li><li>Calendar Entry State
+          	</li><li>Cell Near State
+          	</li><li>App
+          	</li><li>BT Near State
+          	</li><li>Network Location
+          	</li><li>Wifi Near State
+          	</li><li>GPS Location
+          	</li><li>Temperature / Humidity / Proximity / Pressure / Magnetic Field / Light Sensor /  Gesture Event / Orientation State (accelerometer activation)
+          </li></ul>
+
+          <p>
+          Items at the bottom of the list won't become eligible for monitoring until all items further up the
+          list are active.
+          </p>
+
+          <h4>Display-Off Checks</h4>
+
+          When the display is off, all necessary 'active' checks (GPS/Net Location, Wifi Near, App) are done at
+          the same time so that the device is awake for as short a time as possible. See <i>Display Off Timings</i>
+          in <code>Menu / Prefs / Monitor</code> for the frequency and maximum duration of these checks.
+        </section>
+      </div>
     </main>
-<!--Script FCC-->
-<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
- </body>
+    <!-- Script FCC-->
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
 </html>
