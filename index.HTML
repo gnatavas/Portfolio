@@ -8,10 +8,19 @@
       * { box-sizing: border-box; }
       main {
         display: flex;
-        flex-flow: wrap;
-        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
       }
-      .proj-cont {
+      #welcome-section {
+        height: 30vh;
+        text-align: center;
+      }
+      #projects {
+        display: flex;
+        justify-content: center;
+        flex-flow: wrap;
+      }
+      .project-container {
         width: 19rem;
         height: 19rem;
         border: solid;
@@ -21,20 +30,25 @@
   </head>
   <body>
     <main>
-      <div class="proj-cont">
-        <a href="Landing Page\index.HTML">Landing Page</a>
-      </div>
-      <div class="proj-cont">
-        <a href="Survey form\index.HTML">Survey form</a>
-      </div>
-      <div class="proj-cont">
-        <a href="Tribute page\index.HTML">Tribute page</a>
-      </div>
-      <div class="proj-cont">
-        <a href="Technical Documentation Page\index.HTML">Technical Documentation Page</a>
-      </div>
-
+      <section id="welcome-section">
+        <h1>Welcome to my Portfolio Page!</h1>
+        <p>Feel free to visit the sites below. I made it myself for the good of the others!</p>
+      </section>
+      <section id="projects">
+        <div class="project-container">
+          <a href="Landing Page\index.HTML">Landing Page</a>
+        </div>
+        <div class="project-container">
+          <a href="Survey form\index.HTML">Survey form</a>
+        </div>
+        <div class="project-container">
+          <a href="Tribute page\index.HTML">Tribute page</a>
+        </div>
+        <div class="project-container">
+          <a href="Technical Documentation Page\index.HTML">Technical Documentation Page</a>
+        </div>
+      </section>
     </main>
-
+    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
   </body>
 </html>
