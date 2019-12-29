@@ -11,6 +11,11 @@
         flex-direction: column;
         align-items: center;
       }
+      #navbar {
+        margin: 2rem;
+        padding: 2rem;
+        background-color: gray;
+      }
       #welcome-section {
         height: 30vh;
         text-align: center;
@@ -26,35 +31,47 @@
         border: solid;
         border-radius: 5px;
       }
-      .project-title {
+      .project-tile {
         text-align: center;
       }
       .project-container a {
         text-decoration: none;
       }
+      #footer {
+        margin: 2rem;
+        background-color: gray;
+      }
     </style>
   </head>
   <body>
     <main>
+      <nav id="navbar">
+        <a href="#welcome-section">welcome-section</a>
+        <a href="#projects">projects</a>
+      </nav>
       <section id="welcome-section">
         <h1>Welcome to my Portfolio Page!</h1>
         <p>Feel free to visit the sites below. I made it myself for the good of the others!</p>
       </section>
       <section id="projects">
         <div class="project-container" id="Tribute_page">
-          <a href="Tribute page\index.HTML"><h2 class="project-title">Tribute page</h2></a>
+          <a href="Tribute page\index.HTML"><h2 class="project-tile">Tribute page</h2></a>
         </div>
         <div class="project-container">
-          <a href="Survey form\index.HTML"><h2 class="project-title">Survey form</h2></a>
+          <a href="Survey form\index.HTML"><h2 class="project-tile">Survey form</h2></a>
         </div>
         <div class="project-container">
-          <a href="Landing Page\index.HTML"><h2 class="project-title">Landing Page</h2></a>
+          <a href="Landing Page\index.HTML"><h2 class="project-tile">Landing Page</h2></a>
         </div>
         <div class="project-container">
-          <a href="Technical Documentation Page\index.HTML"><h2 class="project-title">Technical Documentation Page</h2></a>
+          <a href="Technical Documentation Page\index.HTML"><h2 class="project-tile">Technical Documentation Page</h2></a>
         </div>
       </section>
     </main>
-    <!-- <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script> -->
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
   </body>
+  <footer id="footer">
+    <h2>Want to see more? Follow this link:</h2>
+    <a id="profile-link" target="_blank" href="https://gnatavas.github.io/Portfolio/index.HTML">More projects on github</a>
+  </footer>
 </html>
